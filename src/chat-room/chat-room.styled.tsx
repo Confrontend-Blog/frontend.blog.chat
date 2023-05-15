@@ -24,6 +24,12 @@ export const ChatContainer = styled(Box)`
   box-sizing: border-box;
 `;
 
+export const MessageContainer = styled.div`
+  display: flex;
+  align-items: start;
+  gap: 10px;
+`;
+
 export const MessageInputContainer = styled(Box)`
   position: fixed;
   bottom: 0;

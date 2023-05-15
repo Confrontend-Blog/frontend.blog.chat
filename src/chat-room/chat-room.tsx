@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import * as S from "./chat-room.styled";
-import { TextField } from "@mui/material";
+import { Avatar, TextField } from "@mui/material";
+
+import { getMessages } from "@Confrontend/chatly";
 
 type Message = {
   id: number;
@@ -10,6 +12,14 @@ type Message = {
 const ChatRoom = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
+
+  try {
+    getMessages("s", "r").then((messages) => {
+      console.log(messages);
+    });
+  } catch (error) {
+    console.log(error);
+  }
 
   const sendMessage = (event: React.FormEvent) => {
     event.preventDefault();
@@ -32,7 +42,10 @@ const ChatRoom = () => {
     <S.RoomContainer>
       <S.ChatContainer id="chatContainer">
         {messages.map((message) => (
-          <S.MessageBubble key={message.id}>{message.text}</S.MessageBubble>
+          <S.MessageContainer key={message.id}>
+            <Avatar src={""} alt="Profile picture" />
+            <S.MessageBubble>{message.text}</S.MessageBubble>
+          </S.MessageContainer>
         ))}
       </S.ChatContainer>
       <S.MessageInputContainer>
@@ -42,6 +55,7 @@ const ChatRoom = () => {
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Type your message here..."
+            inputProps={{ autoComplete: "off" }}
           />
         </form>
       </S.MessageInputContainer>

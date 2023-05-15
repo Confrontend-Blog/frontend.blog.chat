@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@Confrontend/chatly@1.0.8":
-  version "1.0.8"
-  resolved "https://npm.pkg.github.com/download/@Confrontend/chatly/1.0.8/09a6784712f75d50c4aecb7d804663a83bdb75f4#09a6784712f75d50c4aecb7d804663a83bdb75f4"
-  integrity sha512-wylQ1hPyN5VcBn9twd+6jR3xdRS0oWwpAQSV4VhE6IniC/zfDMh37SFgo7gNYtOg53K4ZEQgAw65Wyh4xYsjEA==
+"@Confrontend/chatly@1.0.16":
+  version "1.0.16"
+  resolved "https://npm.pkg.github.com/download/@Confrontend/chatly/1.0.16/f4d6dea8fe713502b670383c17b5ae67f23a19a4#f4d6dea8fe713502b670383c17b5ae67f23a19a4"
+  integrity sha512-+jQ+INCJVVJwTMijbsDtFZTF7OGsdWVaFdwn4hzxGej4TSDZMSxs/tZ6UkdHsN4bjauv2vbfNM2abaO/OOdEjw==
 
 "@ampproject/remapping@^2.2.0":
   version "2.2.1"
@@ -2392,6 +2392,11 @@ dom-helpers@^5.0.1:
   dependencies:
     "@babel/runtime" "^7.8.7"
     csstype "^3.0.2"
+
+dotenv@^16.0.3:
+  version "16.0.3"
+  resolved "https://registry.npmjs.org/dotenv/-/dotenv-16.0.3.tgz#115aec42bac5053db3c456db30cc243a5a836a07"
+  integrity sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==
 
 electron-to-chromium@^1.4.284:
   version "1.4.394"
