@@ -9,7 +9,7 @@ import { token } from "./uesr-token";
 try {
   // const firebaseToken = localStorage.getItem("firebase_token") || "";
 
-  // console.log({ firebaseToken });
+  // console.log({ firebaseTWoken });
 
   // if (!firebaseToken) {
   //   throw new Error("Firebase token not found");
