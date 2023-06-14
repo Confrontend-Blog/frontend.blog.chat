@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@Confrontend/chatly": "^1.0.17",
-    "firebase": "^9.22.0"
+    "firebase": "^9.22.0",
+    "single-spa-react": "^5.0.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.0",

@@ -1,26 +1,44 @@
+declare global {
+  interface Window {
+    Frontend_Portal_Chat: string;
+  }
+}
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import ChatRoom from "./chat-room/chat-room.tsx";
 import { GlobalStyle } from "./index.styled.tsx";
-import { firebaseConfig } from "./config/firebase.config.ts";
-import { initializeFirebase } from "@Confrontend/chatly";
+import singleSpaReact from 'single-spa-react';
 
-const firebaseToken = localStorage.getItem("firebase_token") || ""
+try {
+  // import { firebaseConfig } from "./config/firebase.config.ts";
+  // import { initializeFirebase } from "@Confrontend/chatly";
 
-console.log({ firebaseToken });
+  // const firebaseToken = localStorage.getItem("firebase_token") || "";
 
-if (!firebaseToken) {
-  throw new Error("Firebase token not found");
+  // console.log({ firebaseToken });
+
+  // if (!firebaseToken) {
+  //   throw new Error("Firebase token not found");
+  // }
+
+  // initializeFirebase(firebaseConfig, firebaseToken);
+
+} catch (error) {
+  console.log(error);
 }
 
-initializeFirebase(
-  firebaseConfig,
-  firebaseToken
-);
+const lifecycles = singleSpaReact({
+  React,
+  ReactDOMClient: ReactDOM,
+  rootComponent: ChatRoom,
+  errorBoundary(err, info, props) {
+    return (
+      <div className="h-16 flex items-center justify-between px-6 bg-primary text-white">
+        Error
+      </div>
+    );
+  },
+});
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <ChatRoom />
-  </React.StrictMode>
-);
+export const { bootstrap, mount, unmount } = lifecycles;
