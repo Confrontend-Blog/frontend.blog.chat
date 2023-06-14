@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@Confrontend/chatly@1.0.16":
-  version "1.0.16"
-  resolved "https://npm.pkg.github.com/download/@Confrontend/chatly/1.0.16/f4d6dea8fe713502b670383c17b5ae67f23a19a4#f4d6dea8fe713502b670383c17b5ae67f23a19a4"
-  integrity sha512-+jQ+INCJVVJwTMijbsDtFZTF7OGsdWVaFdwn4hzxGej4TSDZMSxs/tZ6UkdHsN4bjauv2vbfNM2abaO/OOdEjw==
+"@Confrontend/chatly@1.0.17":
+  version "1.0.17"
+  resolved "https://npm.pkg.github.com/download/@Confrontend/chatly/1.0.17/080b681a2e54291725890fea75c73592116ff0ea#080b681a2e54291725890fea75c73592116ff0ea"
+  integrity sha512-+Aa7FPWcFoOll2NdU7JhmUSVTcYRh33t93U7xasa4e32OqNDcaJeRbn0Rh4+4dHAhu9Q8tjy+MpxPPV8YssDEQ==
 
 "@ampproject/remapping@^2.2.0":
   version "2.2.1"
