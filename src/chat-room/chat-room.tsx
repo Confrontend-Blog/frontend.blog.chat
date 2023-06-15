@@ -2,41 +2,35 @@ import { useState, useEffect } from "react";
 import * as S from "./chat-room.styled";
 import { Avatar, TextField } from "@mui/material";
 
-import { getMessages } from "@Confrontend/chatly";
-
-type Message = {
-  id: number;
-  text: string;
-};
+import {
+  Message,
+  getMessages,
+  sendMessage as sendMessageToServer,
+} from "@Confrontend/chatly";
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
 
-  try {
-    getMessages("s", "r").then((messages) => {
-      console.log(messages);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-
   const sendMessage = (event: React.FormEvent) => {
     event.preventDefault();
 
-    const newMessage: Message = {
-      id: messages.length,
-      text: inputValue,
-    };
-
-    setMessages([...messages, newMessage]);
+    sendMessageToServer("sender", "receiver", inputValue);
     setInputValue("");
   };
 
   useEffect(() => {
-    const chatContainer = document.getElementById("chatContainer");
-    chatContainer?.scrollTo(0, chatContainer.scrollHeight);
-  }, [messages]);
+    async function fetchData() {
+      const response = await getMessages("sender", "receiver");
+      console.log(response);
+
+      setMessages(response);
+      const chatContainer = document.getElementById("chatContainer");
+      chatContainer?.scrollTo(0, chatContainer.scrollHeight);
+    }
+
+    fetchData();
+  }, []);
 
   return (
     <S.RoomContainer>

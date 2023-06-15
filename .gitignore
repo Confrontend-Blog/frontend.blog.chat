@@ -25,3 +25,4 @@ dist-ssr
 .yarnrc
 .env
 .npmrc
+src/uesr-token.ts
