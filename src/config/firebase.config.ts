@@ -1,8 +1,4 @@
-import { FirebaseOptions } from "firebase/app";
-
-
-
-export const firebaseConfig: FirebaseOptions = {
+export const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: "blog-chat-firebase.firebaseapp.com",
   projectId: "blog-chat-firebase",

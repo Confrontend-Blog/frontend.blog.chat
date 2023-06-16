@@ -7,6 +7,7 @@ import {
   getMessages,
   sendMessage as sendMessageToServer,
 } from "@Confrontend/chatly";
+import MsgContainer from "../msg-container/msg-container";
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -36,10 +37,14 @@ const ChatRoom = () => {
     <S.RoomContainer>
       <S.ChatContainer id="chatContainer">
         {messages.map((message) => (
-          <S.MessageContainer key={message.id}>
-            <Avatar src={""} alt="Profile picture" />
-            <S.MessageBubble>{message.text}</S.MessageBubble>
-          </S.MessageContainer>
+          <MsgContainer
+            key={message.id}
+            message={message.text}
+            avatar={{
+              src: "",
+              alt: "Profile picture",
+            }}
+          />
         ))}
       </S.ChatContainer>
       <S.MessageInputContainer>
