@@ -1,24 +1,17 @@
 import * as S from "./msg-container.styled";
 
 export type MsgContainerProps = {
-  title?: string;
   message: string;
-  avatar: {
-    src: string;
-    alt: string;
-  };
+  isSender: boolean;
 };
 
 export default function MsgContainer({
-  title,
   message = "No message",
-  avatar,
+  isSender,
 }: MsgContainerProps) {
   return (
-    <S.MessageContainer $hasTitle={!!title}>
-      {title && <S.MessageTitle>{title}</S.MessageTitle>}
-      <S.MessageAvatar src={avatar.src} alt={avatar.alt} />
-      <S.MessageBubble>{message}</S.MessageBubble>
+    <S.MessageContainer $isSender={isSender}>
+      <S.MessageBubble $isSender={isSender}>{message}</S.MessageBubble>
     </S.MessageContainer>
   );
 }

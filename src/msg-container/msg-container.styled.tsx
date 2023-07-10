@@ -1,39 +1,16 @@
 import { Box } from "@mui/material";
-import { Avatar } from "@mui/material";
 import { styled } from "../utils/styled";
 
-export const MessageContainer = styled("div")<{ $hasTitle: boolean }>`
-  display: grid;
-  grid-template-areas: ${(props) =>
-    props.$hasTitle
-      ? `"avatar title"
-     "avatar bubble"`
-      : `"avatar bubble"`};
-  justify-content: start;
-  align-items: center;
-  column-gap: 1em;
-  row-gap: 0.1em;
-  max-height: 4em;
-  margin-bottom: 1em;
-`;
-
-export const MessageTitle = styled("div")`
-  grid-area: title;
+export const MessageContainer = styled("div")<{ $isSender: boolean }>`
   display: flex;
-  align-items: start;
+  flex-direction: ${({ $isSender }) => ($isSender ? "row-reverse" : "row")};
 `;
 
 export const MessageBubble = styled(Box)`
-  grid-area: bubble;
   width: fit-content;
-  background: #444;
+  background: ${({ $isSender }) => ($isSender ? "#2195f36c" : "#202124")};
   color: #eee;
   padding: 0.5em;
-  /* margin-bottom: 10px; */
+  margin-bottom: 10px;
   border-radius: 10px;
-`;
-
-export const MessageAvatar = styled(Avatar)`
-  grid-area: avatar;
-  height: 4em;
 `;

@@ -2,6 +2,10 @@ import { useState, useEffect } from "react";
 import * as S from "./chat-room.styled";
 import { Avatar, TextField } from "@mui/material";
 
+// TODO replace me with real users
+export const RECEIVER = "receiver";
+export const CURRENT_USER = "sender";
+
 import {
   Message,
   getMessages,
@@ -16,13 +20,13 @@ const ChatRoom = () => {
   const sendMessage = (event: React.FormEvent) => {
     event.preventDefault();
 
-    sendMessageToServer("sender", "receiver", inputValue);
+    sendMessageToServer(CURRENT_USER, RECEIVER, inputValue);
     setInputValue("");
   };
 
   useEffect(() => {
     async function fetchData() {
-      const response = await getMessages("sender", "receiver");
+      const response = await getMessages(CURRENT_USER, RECEIVER);
       console.log(response);
 
       setMessages(response);
@@ -39,11 +43,8 @@ const ChatRoom = () => {
         {messages.map((message) => (
           <MsgContainer
             key={message.id}
+            isSender={message.sender === CURRENT_USER}
             message={message.text}
-            avatar={{
-              src: "",
-              alt: "Profile picture",
-            }}
           />
         ))}
       </S.ChatContainer>
