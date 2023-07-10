@@ -15,7 +15,7 @@ export default function MsgContainer({
   avatar,
 }: MsgContainerProps) {
   return (
-    <S.MessageContainer hasTitle={!!title}>
+    <S.MessageContainer $hasTitle={!!title}>
       {title && <S.MessageTitle>{title}</S.MessageTitle>}
       <S.MessageAvatar src={avatar.src} alt={avatar.alt} />
       <S.MessageBubble>{message}</S.MessageBubble>

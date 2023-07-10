@@ -1,7 +1,7 @@
+import "./App.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import ChatRoom from "./chat-room/chat-room";
-import { GlobalStyle } from "./index.styled";
 import { firebaseConfig } from "./config/firebase.config";
 import { initializeFirebase } from "@Confrontend/chatly";
 import { token } from "./uesr-token";
@@ -21,7 +21,6 @@ try {
 
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-      <GlobalStyle />
       <ChatRoom />
     </React.StrictMode>
   );

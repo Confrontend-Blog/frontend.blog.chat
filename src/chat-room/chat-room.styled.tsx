@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { Box } from "@mui/material";
+import { styled } from "../utils/styled";
 
 const v = {
   messageInput: {
@@ -7,7 +7,7 @@ const v = {
   },
 };
 
-export const RoomContainer = styled.div`
+export const RoomContainer = styled("div")`
   display: flex;
   flex-direction: column;
 
@@ -24,7 +24,7 @@ export const ChatContainer = styled(Box)`
   box-sizing: border-box;
 `;
 
-export const MessageContainer = styled.div`
+export const MessageContainer = styled("div")`
   display: flex;
   align-items: start;
   gap: 10px;

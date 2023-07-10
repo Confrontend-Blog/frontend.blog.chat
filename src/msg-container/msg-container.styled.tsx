@@ -1,13 +1,14 @@
-import styled from "styled-components";
 import { Box } from "@mui/material";
 import { Avatar } from "@mui/material";
+import { styled } from "../utils/styled";
 
-export const MessageContainer = styled.div<{ hasTitle: boolean }>`
+export const MessageContainer = styled("div")<{ $hasTitle: boolean }>`
   display: grid;
-  grid-template-areas: ${props => props.hasTitle ? 
-    `"avatar title"
-     "avatar bubble"` : 
-    `"avatar bubble"`};
+  grid-template-areas: ${(props) =>
+    props.$hasTitle
+      ? `"avatar title"
+     "avatar bubble"`
+      : `"avatar bubble"`};
   justify-content: start;
   align-items: center;
   column-gap: 1em;
@@ -16,7 +17,7 @@ export const MessageContainer = styled.div<{ hasTitle: boolean }>`
   margin-bottom: 1em;
 `;
 
-export const MessageTitle = styled.div`
+export const MessageTitle = styled("div")`
   grid-area: title;
   display: flex;
   align-items: start;
