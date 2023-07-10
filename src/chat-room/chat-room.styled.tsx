@@ -10,13 +10,12 @@ const v = {
 export const RoomContainer = styled("div")`
   display: flex;
   flex-direction: column;
-
   overflow: auto;
 `;
 
 export const ChatContainer = styled(Box)`
   position: fixed;
-  top: 0;
+  top: 4em; // Header height
   bottom: ${v.messageInput.height}; // height of the MessageInput
   width: 100%;
   overflow: auto;
