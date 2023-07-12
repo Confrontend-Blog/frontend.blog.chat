@@ -8,12 +8,12 @@ const v = {
 };
 
 export const RoomContainer = styled("div")`
-  display: flex;
   flex-direction: column;
   overflow: auto;
 `;
 
 export const ChatContainer = styled(Box)`
+  display: contents;
   position: fixed;
   top: 4em; // Header height
   bottom: ${v.messageInput.height}; // height of the MessageInput

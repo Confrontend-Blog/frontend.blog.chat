@@ -1,31 +1,59 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { Root, createRoot } from "react-dom/client";
 import ChatRoom from "./chat-room/chat-room";
 import { firebaseConfig } from "./config/firebase.config";
 import { initializeFirebase } from "@Confrontend/chatly";
-import { token } from "./uesr-token";
 import "./global.css";
 
-try {
-  // const firebaseToken = localStorage.getItem("firebase_token") || "";
+declare global {
+  interface Window {
+    chatMicroFrontend?: {
+      mount: (containerId: string) => void;
+      unmount: (containerId: string) => void;
+    };
+  }
+}
+// Prepare root instance holder
+let rootInstance: Root | null = null;
 
-  // console.log({ firebaseTWoken });
+// Mount method
+function mount(containerId: string) {
+  // Get the container DOM node
+  const container = document.getElementById(containerId);
 
-  // if (!firebaseToken) {
-  //   throw new Error("Firebase token not found");
-  // }
+  if (!container) {
+    console.error(`Container with id "${containerId}" not found.`);
+    return;
+  }
 
-  console.log(token);
+  // Initialize Firebase
+  // TODO get token from gcp
+  initializeFirebase(firebaseConfig, firebaseConfig.apiKey);
 
-  initializeFirebase(firebaseConfig);
-
-  ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  // Mount your application into the container
+  rootInstance = createRoot(container);
+  rootInstance.render(
     <React.StrictMode>
       <ChatRoom />
     </React.StrictMode>
   );
-} catch (error) {
-  console.log("bootstrap");
-
-  console.log(error);
 }
+
+// Unmount method
+function unmount(containerId: string) {
+  if (rootInstance) {
+    rootInstance.unmount();
+    rootInstance = null;
+  } else {
+    console.error(`Application not mounted to "${containerId}"`);
+  }
+}
+
+// TODO find a better alternative for testing
+// mount("root");
+
+// Expose the mount and unmount methods to window
+window.chatMicroFrontend = {
+  mount,
+  unmount,
+};

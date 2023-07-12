@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import * as S from "./chat-room.styled";
-import { Avatar, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 
 // TODO replace me with real users
 export const RECEIVER = "receiver";
 export const CURRENT_USER = "sender";
 
 import {
-  Message,
   getMessages,
   sendMessage as sendMessageToServer,
 } from "@Confrontend/chatly";
@@ -15,7 +14,7 @@ import MsgContainer from "../msg-container/msg-container";
 import HeaderChatRoom from "./header/header-chat-room";
 
 const ChatRoom = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<any[]>([]);
   const [inputValue, setInputValue] = useState("");
 
   const sendMessage = (event: React.FormEvent) => {

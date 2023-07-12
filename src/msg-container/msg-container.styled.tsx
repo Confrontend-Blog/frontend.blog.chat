@@ -6,7 +6,7 @@ export const MessageContainer = styled("div")<{ $isSender: boolean }>`
   flex-direction: ${({ $isSender }) => ($isSender ? "row-reverse" : "row")};
 `;
 
-export const MessageBubble = styled(Box)`
+export const MessageBubble = styled(Box)<any>`
   width: fit-content;
   background: ${({ $isSender }) => ($isSender ? "#2195f36c" : "#202124")};
   color: #eee;
