@@ -1,10 +1,10 @@
-import "./App.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import ChatRoom from "./chat-room/chat-room";
 import { firebaseConfig } from "./config/firebase.config";
 import { initializeFirebase } from "@Confrontend/chatly";
 import { token } from "./uesr-token";
+import "./global.css";
 
 try {
   // const firebaseToken = localStorage.getItem("firebase_token") || "";
@@ -17,7 +17,7 @@ try {
 
   console.log(token);
 
-  initializeFirebase(firebaseConfig, token);
+  initializeFirebase(firebaseConfig);
 
   ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
