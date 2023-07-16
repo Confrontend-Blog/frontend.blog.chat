@@ -10,7 +10,7 @@ import {
   getMessages,
   sendMessage as sendMessageToServer,
 } from "@Confrontend/chatly";
-import MsgContainer from "../msg-container/msg-container";
+import MsgContainer from "./msg-container/msg-container";
 import HeaderChatRoom from "./header/header-chat-room";
 
 const ChatRoom = () => {

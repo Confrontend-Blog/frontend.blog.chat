@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { styled } from "../utils/styled";
+import { styled } from "../../utils/styled";
 
 export const MessageContainer = styled("div")<{ $isSender: boolean }>`
   display: flex;

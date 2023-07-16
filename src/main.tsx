@@ -1,9 +1,11 @@
 import React from "react";
 import { Root, createRoot } from "react-dom/client";
-import ChatRoom from "./chat-room/chat-room";
 import { firebaseConfig } from "./config/firebase.config";
 import { initializeFirebase } from "@Confrontend/chatly";
 import "./global.css";
+import ChatsList from "./chats-list/chats-list";
+import { ChatPartnerProvider } from "./utils/chat-partner.provider";
+import App from "./App";
 
 declare global {
   interface Window {
@@ -34,7 +36,9 @@ function mount(containerId: string) {
   rootInstance = createRoot(container);
   rootInstance.render(
     <React.StrictMode>
-      <ChatRoom />
+      <ChatPartnerProvider>
+        <App />
+      </ChatPartnerProvider>
     </React.StrictMode>
   );
 }
@@ -50,7 +54,7 @@ function unmount(containerId: string) {
 }
 
 // TODO find a better alternative for testing
-// mount("root");
+mount("root");
 
 // Expose the mount and unmount methods to window
 window.chatMicroFrontend = {

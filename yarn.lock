@@ -2,10 +2,19 @@
 # yarn lockfile v1
 
 
-"@Confrontend/chatly@1.0.20":
-  version "1.0.20"
-  resolved "https://npm.pkg.github.com/download/@Confrontend/chatly/1.0.20/2d0e6fa3e07d3d1196f287909d277544ab1e473e#2d0e6fa3e07d3d1196f287909d277544ab1e473e"
-  integrity sha512-LeHnwUutEhsrA+HCDIFN+bpyDyEqHzIjCts7ECAvqMw4tP3bhIIzBVb0okfqIriBks/8RvOmrOB9DvZlZfwLpw==
+"@Confrontend/chatly@^1.0.21":
+  version "1.0.21"
+  resolved "https://npm.pkg.github.com/download/@Confrontend/chatly/1.0.21/60dfcc54db1b48c0ca8a397adaef065646d1e0d8#60dfcc54db1b48c0ca8a397adaef065646d1e0d8"
+  integrity sha512-/CowGQQfMLNUiLxJexFDgJ493W6iAO+pZ/yPS6TTQAL6C7LVvxMH5pYUi4ugX1ko2YpHKmG8yHdAjbymUVUurg==
+
+"@Confrontend/ui-library@^1.16.0":
+  version "1.16.0"
+  resolved "https://npm.pkg.github.com/download/@Confrontend/ui-library/1.16.0/a2870ecd5d2f1c89bb25c12ce85266949af00e95#a2870ecd5d2f1c89bb25c12ce85266949af00e95"
+  integrity sha512-BkKhP51Ee6KyNkm3aNG812YGTBcA7sJ2OGJ1oUsn2kjvPte+SK4XlhPKBXd23OHkSwtVcWKIdhkYjEIAisDb3g==
+  dependencies:
+    chart.js "^4.3.0"
+    react-chartjs-2 "^5.2.0"
+    react-table "^7.8.0"
 
 "@ampproject/remapping@^2.2.0":
   version "2.2.1"
@@ -1790,6 +1799,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
+"@kurkle/color@^0.3.0":
+  version "0.3.2"
+  resolved "https://registry.npmjs.org/@kurkle/color/-/color-0.3.2.tgz#5acd38242e8bde4f9986e7913c8fdf49d3aa199f"
+  integrity sha512-fuscdXJ9G1qb7W8VdHi+IwRqij3lBkosAm4ydQtEmbY58OzHXqQhvlxqEkoz0yssNVn38bcpRWgA9PP+OGoisw==
+
 "@mui/base@5.0.0-beta.7":
   version "5.0.0-beta.7"
   resolved "https://registry.npmjs.org/@mui/base/-/base-5.0.0-beta.7.tgz#01cb99ac098af0ba989c7abc1474e3291c29414f"
@@ -1808,6 +1822,13 @@
   version "5.14.0"
   resolved "https://registry.npmjs.org/@mui/core-downloads-tracker/-/core-downloads-tracker-5.14.0.tgz#ca394a1c53c215f4c6bf7f7460d8211298d7bbf6"
   integrity sha512-SYBOVCatVDUf/lbrLGah09bHhX5WfUXg7kSskfLILr6SvKRni0NLp0aonxQ0SMALVVK3Qwa6cW4CdWuwS0gC1w==
+
+"@mui/icons-material@^5.14.0":
+  version "5.14.0"
+  resolved "https://registry.npmjs.org/@mui/icons-material/-/icons-material-5.14.0.tgz#6452b00bc98dc407f20a927245e273113703166f"
+  integrity sha512-z7lYNteDi1GMkF9JP/m2RWuCYK1M/FlaeBSUK7/IhIYzIXNhAVjfD8jRq5vFBV31qkEi2aGBS2z5SfLXwH6U0A==
+  dependencies:
+    "@babel/runtime" "^7.22.5"
 
 "@mui/material@^5.13.0":
   version "5.14.0"
@@ -2275,6 +2296,13 @@ chalk@^4.0.0:
   dependencies:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
+
+chart.js@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npmjs.org/chart.js/-/chart.js-4.3.0.tgz#ac363030ab3fec572850d2d872956f32a46326a1"
+  integrity sha512-ynG0E79xGfMaV2xAHdbhwiPLczxnNNnasrmPEXriXsPJGjmhOBYzFVEsB65w2qMDz+CaBJJuJD0inE/ab/h36g==
+  dependencies:
+    "@kurkle/color" "^0.3.0"
 
 chokidar@^3.4.0:
   version "3.5.3"
@@ -3325,6 +3353,11 @@ queue-microtask@^1.2.2:
   resolved "https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz#4929228bbc724dfac43e0efb058caf7b6cfb6243"
   integrity sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==
 
+react-chartjs-2@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.npmjs.org/react-chartjs-2/-/react-chartjs-2-5.2.0.tgz#43c1e3549071c00a1a083ecbd26c1ad34d385f5d"
+  integrity sha512-98iN5aguJyVSxp5U3CblRLH67J8gkfyGNbiK3c+l1QI/G4irHMPQw44aEPmjVag+YKTyQ260NcF82GTQ3bdscA==
+
 react-dom@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz#22aaf38708db2674ed9ada224ca4aa708d821e3d"
@@ -3332,6 +3365,11 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
+
+react-hook-form@^7.45.1:
+  version "7.45.1"
+  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.45.1.tgz#e352c7f4dbc7540f0756abbb4dcfd1122fecc9bb"
+  integrity sha512-6dWoFJwycbuFfw/iKMcl+RdAOAOHDiF11KWYhNDRN/OkUt+Di5qsZHwA0OwsVnu9y135gkHpTw9DJA+WzCeR9w==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
@@ -3347,6 +3385,11 @@ react-refresh@^0.14.0:
   version "0.14.0"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
+
+react-table@^7.8.0:
+  version "7.8.0"
+  resolved "https://registry.npmjs.org/react-table/-/react-table-7.8.0.tgz#07858c01c1718c09f7f1aed7034fcfd7bda907d2"
+  integrity sha512-hNaz4ygkZO4bESeFfnfOft73iBUj8K5oKi1EcSHPAibEydfsX2MyU6Z8KCr3mv3C9Kqqh71U+DhZkFvibbnPbA==
 
 react-transition-group@^4.4.5:
   version "4.4.5"

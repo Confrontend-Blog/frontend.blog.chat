@@ -1,8 +1,5 @@
 import { styled } from "../../utils/styled";
 import { Avatar } from "@mui/material";
-import { ArrowBack } from "@mui/icons-material";
-import { useContext } from "react";
-import { ChatPartnerContext } from "../../utils/chat-partner.provider";
 
 const Container = styled("div")`
   display: flex;
@@ -18,22 +15,17 @@ const Text = styled("span")`
   padding: 0.5em 0.5em 0.5em 1em;
 `;
 
-type HeaderChatRoomProps = {
+type HeaderChatListProps = {
   title: string;
 };
 
-function HeaderChatRoom({ title }: HeaderChatRoomProps) {
-  const { setChatPartner } = useContext(ChatPartnerContext);
-  function onBack() {
-    setChatPartner(null);
-  }
+function HeaderChatList({ title }: HeaderChatListProps) {
   return (
     <Container>
-      <ArrowBack onClick={onBack} />
       <Avatar />
       <Text>{title}</Text>
     </Container>
   );
 }
 
-export default HeaderChatRoom;
+export default HeaderChatList;
